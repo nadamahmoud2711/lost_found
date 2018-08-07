@@ -4,7 +4,6 @@
 @section('content')
 	<section class="rev_slider_wrapper">
 
-
 		<div id="slider1" class="rev_slider">
 			<ul>
 
@@ -29,7 +28,7 @@
                                     <option>Events</option>
                                 </select>
                             </div>
-                            <button class="main-search-button" onclick="window.location.href='listing.html'">Search</button>
+                            <button class="main-search-button" onclick="window.location.href='listing.html'">بحث</button>
                         </div>
                     </div>
                     </div>
@@ -159,10 +158,10 @@
 	</section>
 
 
-	<section class="home-serivce sec-padding sec-padding74">
+	<section id="about" class="home-serivce sec-padding sec-padding74">
 		<div class="container">
 			<div class="sec-title text-center">
-				<h2>Our Causes</h2>
+				<h2>من نحن</h2>
 				<p>Lorem ipsum is a dummy text it will use for subtitle here</p>
 				<span class="decor"><span class="inner"></span></span>
 			</div>
@@ -259,7 +258,6 @@
 		</div>
 	</section>
 
-
 	<section class="overlay-white sec-padding parallax-section sec-padding89">
 		<div class="container">
 			<div class="row">
@@ -279,67 +277,52 @@
 		</div>
 	</section>
 
-
-	<section class="upcoming-event sec-padding bg-pattern bg-color-thm sec-padding75">
+	<section id="steps" class="upcoming-event sec-padding bg-pattern bg-color-thm sec-padding75">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="sec-title text-center">
-						<h2 class="text-white">Upcoming Events</h2>
+						<h2 class="text-white">ارشادات الإستخدام</h2>
 						<p class="text-white">Lorem ipsum is a dummy text it will use for subtitle here</p>
 						<span class="decor"><span class="inner"></span></span>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="event-post">
-						<div class="thumb">
-							<img src="img/event/ue1.jpg" alt="">
-							<div class="overlay">
-								<a href="#">Join Us</a>
-								<a href="#">Donate Now</a>
+				<div class="container">
+					<div class="row smpl-step" style="border-bottom: 0; min-width: 500px;">
+						<div class="col-xs-3 smpl-step-step disabled">
+							<div class="text-center smpl-step-num">Step 1</div>
+							<div class="progress">
+								<div class="progress-bar"></div>
 							</div>
+							<a class="smpl-step-icon"><i class="fa fa-user" style="font-size: 60px; padding-left: 12px; padding-top: 3px; color: #25bada;"></i></a>
+							<div class="smpl-step-info text-center">Registe User via control panel.</div>
 						</div>
-						<div class="caption">
-							<h3 class="title"><a href="#">Al Aqsa: Save Our History</a></h3>
-							<i class="fa fa-map-marker"></i>
-							<p class="event-time"><span>16-25</span> June <span>2016</span></p>
-							<p class="event-location">United Kingdom</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="event-post">
-						<div class="thumb">
-							<img src="img/event/ue2.jpg" alt="">
-							<div class="overlay">
-								<a href="#">Join Us</a>
-								<a href="#">Donate Now</a>
+
+						<div class="col-xs-3 smpl-step-step disabled">
+							<div class="text-center smpl-step-num">Step 2</div>
+							<div class="progress">
+								<div class="progress-bar"></div>
 							</div>
+							<a class="smpl-step-icon"><i class="fa fa-dollar" style="font-size: 60px; padding-left: 18px; padding-top: 5px; color: #25bada;"></i></a>
+							<div class="smpl-step-info text-center">Process Payment and fill out all required fields.</div>
 						</div>
-						<div class="caption">
-							<h3 class="title"><a href="#">Al Aqsa: Save Our History</a></h3>
-							<i class="fa fa-map-marker"></i>
-							<p class="event-time"><span>16-25</span> June <span>2016</span></p>
-							<p class="event-location">United Kingdom</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="event-post">
-						<div class="thumb">
-							<img src="img/event/ue3.jpg" alt="">
-							<div class="overlay">
-								<a href="#">Join Us</a>
-								<a href="#">Donate Now</a>
+						<div class="col-xs-3 smpl-step-step disabled">
+							<div class="text-center smpl-step-num">Step 3</div>
+							<div class="progress">
+								<div class="progress-bar"></div>
 							</div>
+							<a class="smpl-step-icon"><i class="fa fa-repeat" style="font-size: 60px; padding-left: 7px; padding-top: 7px; color: #25bada;"></i></a>
+							<div class="smpl-step-info text-center">Confirm Data entered in step 2.</div>
 						</div>
-						<div class="caption">
-							<h3 class="title"><a href="#">Al Aqsa: Save Our History</a></h3>
-							<i class="fa fa-map-marker"></i>
-							<p class="event-time"><span>16-25</span> June <span>2016</span></p>
-							<p class="event-location">United Kingdom</p>
+						<div class="col-xs-3 smpl-step-step disabled">
+							<div class="text-center smpl-step-num">Step 4</div>
+							<div class="progress">
+								<div class="progress-bar"></div>
+							</div>
+							<a class="smpl-step-icon"><i class="fa fa-download" style="font-size: 60px; padding-left: 8px; padding-top: 4px; color: #25bada;"></i></a>
+							<div class="smpl-step-info text-center">Download product after receiving confirmation email.</div>
 						</div>
 					</div>
 				</div>
@@ -347,12 +330,11 @@
 		</div>
 	</section>
 
-
     <section class="gallery-section full-width pb_2">
     	<div class="auto-container">
 
 			<div class="sec-title text-center">
-				<h2>Our Gallery</h2>
+				<h2>المفقودين</h2>
 				<p>Lorem ipsum is a dummy text it will use for subtitle here</p>
 				<span class="decor"><span class="inner"></span></span>
 			</div>
@@ -441,6 +423,206 @@
         </div>
     </section>
 
+	<section id="missing" class="sec-padding meet-Volunteer">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="sec-title text-right">
+						<h2>المفقودين</h2>
+						<p>Lorem ipsum is a dummy text it will use for subtitle here</p>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix">
+				<div class="team-carousel owl-carousel owl-theme">
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/1.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Muhibbur Rashid</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/2.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Rashed Kabir</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/3.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Jannatul Ferdous</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/4.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Ashikur Rahman</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/1.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Muhibbur Rashid</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/2.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Rashed Kabir</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/3.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Jannatul Ferdous</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+					<div class="item">
+						<div class="single-team-member">
+							<div class="img-box">
+								<img src="img/team/4.jpg" alt="">
+								<div class="overlay">
+									<div class="box">
+										<div class="content">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+												<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h3>Ashikur Rahman</h3>
+							<span>Businessman</span>
+							<p>Lorem ipsum dolor sit amet, sea dolor essent nostrud no, pro no vidit aterum mediocritatem.</p>
+							<a href="volunteer-profile.html" class="thm-btn">View Profile</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<section class="fact-counter-wrapper sec-padding parallax-section">
 		<div class="container">
@@ -476,15 +658,13 @@
 		</div>
 	</section>
 
-
-	<section class="sec-padding meet-Volunteer">
+	<section id="found" class="sec-padding meet-Volunteer">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-10">
-					<div class="sec-title text-left">
-						<h2>Meet Our Volunteers</h2>
+				<div class="col-xs-12">
+					<div class="sec-title text-right">
+						<h2>المعثور عليهم</h2>
 						<p>Lorem ipsum is a dummy text it will use for subtitle here</p>
-						<span class="decor"><span class="inner"></span></span>
 					</div>
 				</div>
 			</div>
@@ -679,7 +859,6 @@
 		</div>
 	</section>
 
-	
 	<section class="sec-padding testimonials-wrapper parallax-section sec-padding77">
 		<div class="container">
 			<div class="sec-title colored text-center">
@@ -981,6 +1160,28 @@
 			</div>
 		</div>
 	</section>
+
+
+
+	<div id="regster-form" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Modal title</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Modal body text goes here.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	@endsection
 
