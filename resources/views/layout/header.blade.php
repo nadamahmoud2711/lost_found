@@ -64,7 +64,11 @@
                         <a href="{{ Request::root() }}/#missing">المفقودين</a>
                     </li>
                     <li class="dropdown">
+<<<<<<< HEAD
                         <a href="{{ Request::root() }}/#steps">إرشادات الإستخدام</a>
+=======
+                        <a href="{{ Request::root() }}/#steps">ارشادات الإستخدام</a>
+>>>>>>> 344f6665d3afa735663c6d2aac54b9f448635944
                     </li>
                     <li class="dropdown">
                         <a href="{{ Request::root() }}/#about">من نحن</a>
