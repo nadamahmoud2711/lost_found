@@ -123,13 +123,10 @@ img {
 	background-color: #fff;
 	border-color: #0ebfe5;
 	color: #0ebfe5;
-<<<<<<< HEAD
 	position: relative;
 	left: 507px;
     top: 42px;
     margin-bottom: 43px;
-=======
->>>>>>> 344f6665d3afa735663c6d2aac54b9f448635944
 }
 .thm-btn:active,
 .thm-btn:focus {
@@ -151,12 +148,7 @@ img {
 }
 
 .sec-title {
-<<<<<<< HEAD
-
     margin-bottom: 113px;
-=======
-	margin-bottom: 63px;
->>>>>>> 344f6665d3afa735663c6d2aac54b9f448635944
 }
 .sec-title h2 {
 	font-size: 32px;
@@ -1585,13 +1577,8 @@ img {
 
 .team-carousel .owl-controls {
 	position: absolute;
-<<<<<<< HEAD
     top: -72px;
     left: 524px;
-=======
-	top: -140px;
-	left: 0;
->>>>>>> 344f6665d3afa735663c6d2aac54b9f448635944
 }
 .owl-theme .owl-nav {
 	margin: 0;
@@ -4361,7 +4348,6 @@ img {
 
 .smpl-step > .smpl-step-step.disabled a.smpl-step-icon {
 	pointer-events: none;
-<<<<<<< HEAD
 }
 .losting{
 
@@ -4385,7 +4371,4 @@ img {
 
     padding: 24px 66px;
     border-radius: 38px;
-
-=======
->>>>>>> 344f6665d3afa735663c6d2aac54b9f448635944
 }
