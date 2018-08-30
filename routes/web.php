@@ -11,6 +11,14 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('photos/test', 'PhotoController@test');
+
+Route::resource('photos', 'PhotoController');
+
+Route::get('search', 'SearchController@search');
+
