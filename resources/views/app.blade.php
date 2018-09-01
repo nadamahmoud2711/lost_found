@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
-<!-- Mirrored from hasan.themexlab.com/new/lillah-fund-html/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jul 2018 15:39:31 GMT -->
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
@@ -27,11 +26,17 @@
     <!-- responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <link href="css/imageuploadify.min.css" rel="stylesheet"><br type="_moz">
+
     <!-- master stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="js/jquery-nice-select-1.1.0/css/nice-select.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <!-- responsive stylesheet -->
     <link rel="stylesheet" href="css/responsive.css">
+
+
 
     @yield('styles')
 
@@ -72,6 +77,8 @@
 <script src="js/isotope.pkgd.min.js"></script>
 <!-- jQuery ui js -->
 <script src="js/jquery-ui-1.11.4/jquery-ui.js"></script>
+<script src="js/imageuploadify.js"></script>
+
 
 <!-- revolution scripts -->
 
@@ -90,15 +97,21 @@
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
 <script src="js/jquery-nice-select-1.1.0/js/jquery.nice-select.js"></script>
+
+<script src="js/bootstrap-datepicker.js"></script>
+
+
+{{--<script src="js/bootstrap-datepicker.ar.min.js"></script>--}}
+
 <script>
 
     $(document).ready(function() {
         $('select').niceSelect();
     });
+
 </script>
 
 @yield('scripts')
 </body>
 
-<!-- Mirrored from hasan.themexlab.com/new/lillah-fund-html/index-4.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Jul 2018 15:39:32 GMT -->
 </html>

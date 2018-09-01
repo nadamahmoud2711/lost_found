@@ -11,9 +11,9 @@
                     <div class="layout-outer">
 
                         <div class="main-search-input-wrap buttons-searching">
-                        <button type="button" class="btn btn-lg mt_15 btn-outline-info bluish" data-toggle="modal" data-target="#modal-login">الإبلاغ عن معثور عليه</button>
+                        <button type="button" class="btn btn-lg mt_15 btn-outline-info bluish" data-toggle="modal" data-target="#modal_found">الإبلاغ عن معثور عليه</button>
 
-                        <button type="button" class="btn btn-lg mt_15 btn-outline-info greyish" data-toggle="modal" data-target="#modal-login">الإبلاغ عن مفقود</button>
+                        <button type="button" class="btn btn-lg mt_15 btn-outline-info greyish" data-toggle="modal" data-target="#modal_lost">الإبلاغ عن مفقود</button>
                         </div>
 
                         {{--<div class="main-search-input-wrap">--}}
@@ -45,6 +45,203 @@
 			</ul>
 		</div>
 	</section>
+
+	<div class="modal fade" id="modal_found" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog style-one" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="donation-form-outer">
+						<form id="found">
+							<div class="form-portlet">
+								<div class="row clearfix">
+
+
+									<div class="form-group col-xs-12">
+										<div class="field-label"><span class="required">*</span>صور المعثور عليه </div>
+										<input type="file" name="images[]" accept="image/*" multiple>
+									</div>
+
+
+									<div class="form-group col-xs-7">
+
+										<br>
+										<br>
+										<p class="place_info_label">: أو أدخل بيانات الموقع</p>
+
+									</div>
+
+									<div class="form-group col-xs-5 position">
+
+										<div class="field-label"><span class="required">*</span>موقع العثور عليه</div>
+										<button type="button" id="setlocation" class="btn btn-lg btn-outline-info thm-btn" onclick="getLocation()" style="border-radius: 0px; padding: 9px 10px;">ضبط على موقعك الحالي</button>
+										<p class="required" id="error_position"></p>
+
+									</div>
+
+
+									<div class="form-group col-xs-5">
+
+										<div class="field-label">: علامة مميزة</div>
+										<input class="form-control" name="place_sign" id="place_sign" placeholder="علامة مميزة بجوار الموقع" type="text">
+
+									</div>
+									<div class="form-group col-xs-4">
+
+										<div class="field-label"><span class="required">*</span>المنطقة</div>
+										<input class="form-control" name="area" id="area" placeholder="المنطقة" type="text">
+
+									</div>
+									<div class="form-group col-xs-3">
+
+										<div class="field-label"><span class="required">*</span>المدينة</div>
+										<input class="form-control" name="city" id="city" placeholder="المدينة" type="text">
+
+									</div>
+
+									<div class="form-group col-xs-6">
+										<div class="field-label">وقت العثور عليه</div>
+										<input class="form-control" type="time">
+									</div>
+
+
+									<div class="form-group col-xs-6">
+										<div class="field-label">تاريخ العثور عليه</div>
+										<input class="form-control" id="datepicker1" type="text">
+									</div>
+									<div class="form-group col-xs-12">
+										<div class="field-label">: العمر المتوقع</div>
+
+										<div class="col-xs-4"></div>
+
+										<div class="col-xs-3">
+
+											<div class="field-label">: إلى</div>
+											<input class="form-control" id="age_to" type="number" name="age_to">
+										</div>
+										<div class="col-xs-1"></div>
+
+
+										<div class="col-xs-3">
+
+											<div class="field-label">: من</div>
+											<input class="form-control" id="age_from" type="number" name="age_from">
+										</div>
+
+									</div>
+
+									<div class="form-group col-xs-12">
+										<div class="field-label">: ملحوظات أخرى</div>
+										<textarea name="notes" id="notes" cols="30" rows="5" class="form-control" style="height: 100%"></textarea>
+									</div>
+
+
+										<input type="hidden" id="lat" name="lat" value="">
+										<input type="hidden" id="lng" name="lng" value="">
+										<input type="hidden" id="lost" name="lost" value="0">
+
+
+								</div>
+								<div class="text-center"><button class="thm-btn mt_30 mb_30" type="submit">إبلاغ</button></div>
+
+							</div>
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal_lost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog style-one" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+				<div class="modal-body">
+					<div class="donation-form-outer">
+						<form id="lost">
+							<div class="form-portlet">
+								<div class="row clearfix">
+
+
+									<div class="form-group col-xs-12">
+										<div class="field-label"><span class="required">*</span>صور المفقود </div>
+										<input type="file" name="images[]" accept="image/*" multiple>
+									</div>
+
+
+									<div class="form-group col-xs-12">
+
+										<div class="field-label"><span class="required">*</span>أدخل بيانات الموقع</div>
+
+									</div>
+
+
+									<div class="form-group col-xs-5">
+
+										<div class="field-label">: علامة مميزة</div>
+										<input class="form-control" name="place_sign" id="lost_place_sign" placeholder="علامة مميزة بجوار الموقع" type="text">
+
+									</div>
+									<div class="form-group col-xs-4">
+
+										<div class="field-label"><span class="required">*</span>المنطقة</div>
+										<input class="form-control" name="area" id="lost_area" placeholder="المنطقة" type="text">
+
+									</div>
+									<div class="form-group col-xs-3">
+
+										<div class="field-label"><span class="required">*</span>المدينة</div>
+										<input class="form-control" name="city" id="lost_city" placeholder="المدينة" type="text">
+
+									</div>
+
+									<div class="form-group col-xs-6">
+										<div class="field-label">وقت الفقد</div>
+										<input class="form-control" type="time">
+									</div>
+
+
+									<div class="form-group col-xs-6">
+										<div class="field-label">تاريخ الفقد</div>
+										<input class="form-control" id="datepicker2" type="text">
+									</div>
+									<div class="col-xs-9"></div>
+
+									<div class="form-group col-xs-3">
+										<div class="field-label">: العمر</div>
+
+										<input class="form-control" id="age" type="number" name="age">
+
+									</div>
+
+									<div class="form-group col-xs-12">
+										<div class="field-label">: ملحوظات أخرى</div>
+										<textarea name="notes" id="lost_notes" cols="30" rows="5" class="form-control" style="height: 100%"></textarea>
+									</div>
+
+
+									<input type="hidden" id="lost" name="lost" value="1">
+
+
+								</div>
+								<div class="text-center"><button class="thm-btn mt_30 mb_30" type="submit">إبلاغ</button></div>
+
+							</div>
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 
 	<section id="about" class="home-serivce sec-padding sec-padding74">
@@ -217,7 +414,7 @@
 						</div>
 					</div>
 				</div>
-				<a href="#" class="thm-btn inverse">.. جميع المفقودين</a>
+				<a href="#" class="thm-btn inverse my_btn">.. جميع المفقودين</a>
 			</div>
 		</div>
 	</section>
@@ -346,7 +543,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#" class="thm-btn inverse">.. جميع المعثور عليهم</a>
+                <a href="#" class="thm-btn inverse my_btn">.. جميع المعثور عليهم</a>
             </div>
         </div>
     </section>
@@ -404,25 +601,69 @@
 
 
 
-	<div id="regster-form" class="modal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Modal title</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p>Modal body text goes here.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Save changes</button>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
 
 	@endsection
 
+@section('scripts')
+
+	<script>
+
+
+        $(document).ready(function() {
+            $('input[type="file"]').imageuploadify();
+
+            $.fn.datepicker.dates['en'] = {
+                days: ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
+                daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                daysMin: ["أحد", "إثنين", "ثلاثاء", "أربعاء", "خميس", "جمعة", "سبت"],
+                months: ["يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+                monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                today: "Today",
+                clear: "Clear",
+                format: "mm/dd/yyyy",
+                titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+                weekStart: 0
+            };
+
+            $('#datepicker1').datepicker({
+
+
+                language: 'ar'
+            });
+            $('#datepicker2').datepicker({
+
+
+                language: 'ar'
+            });
+        });
+
+
+	</script>
+	<script>
+        var lat = document.getElementById("lat");
+        var lng = document.getElementById("lng");
+
+        function getLocation() {
+            if (!navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                document.getElementById("error_position").innerText = "من فضلك اتصل بالانترنت لحفظ موقعك الحالي";
+            }
+        }
+
+        function showPosition(position) {
+            lat.value = position.coords.latitude;
+
+            lng.value = position.coords.longitude;
+
+
+           document.getElementById("setlocation").innerText = "تم الضبط على موقعك الحالي";
+            document.getElementById("setlocation").style.backgroundColor = '#ef3356';
+        }
+	</script>
+
+
+
+@endsection

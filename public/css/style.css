@@ -123,10 +123,7 @@ img {
 	background-color: #fff;
 	border-color: #0ebfe5;
 	color: #0ebfe5;
-	position: relative;
-	left: 507px;
-    top: 42px;
-    margin-bottom: 43px;
+    /*margin-bottom: 43px;*/
 }
 .thm-btn:active,
 .thm-btn:focus {
@@ -3844,6 +3841,7 @@ img {
 	background:#ffffff;
 	border:1px solid #e0e0e0;
 	height:52px;
+    text-align: right;
 }
 .donation-form-outer select {
 	cursor:pointer;
@@ -3856,6 +3854,7 @@ img {
 	color:#252525;
 	line-height:28px;
 	margin-bottom:10px;
+    text-align: right;
 }
 .donation-form-outer .field-label .required {
 	color:#ff0000;
@@ -3886,6 +3885,8 @@ img {
 }
 .donation-form-outer button {
 	padding:9px 30px;
+    font-size: 16px;
+    font-size: 16px;
 }
 
 
@@ -4371,4 +4372,24 @@ img {
 
     padding: 24px 66px;
     border-radius: 38px;
+}
+.my_btn{
+
+	position: relative;
+	top: 41px;
+	left: 498px;
+}
+.modal {
+	overflow-y:auto;
+}
+.place_info_label{
+
+	font-size: 17px;
+	text-align: right;
+	font-weight: 550;
+	margin-top: 5px;
+}
+.position{
+
+	text-align: right;
 }
