@@ -65,7 +65,7 @@
 									</div>
 
 
-									<div class="form-group col-xs-7">
+									<div class="form-group col-xs-6">
 
 										<br>
 										<br>
@@ -73,7 +73,7 @@
 
 									</div>
 
-									<div class="form-group col-xs-5 position">
+									<div class="form-group col-xs-6">
 
 										<div class="field-label"><span class="required">*</span>موقع العثور عليه</div>
 										<button type="button" id="setlocation" class="btn btn-lg btn-outline-info thm-btn" onclick="getLocation()" style="border-radius: 0px; padding: 9px 10px;">ضبط على موقعك الحالي</button>
@@ -646,7 +646,7 @@
         var lng = document.getElementById("lng");
 
         function getLocation() {
-            if (!navigator.geolocation) {
+            if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
                 document.getElementById("error_position").innerText = "من فضلك اتصل بالانترنت لحفظ موقعك الحالي";
