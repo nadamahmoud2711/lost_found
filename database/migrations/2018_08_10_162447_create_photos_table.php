@@ -17,6 +17,7 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->string('path');
             $table->boolean('lost'); // lost = 1 or found = 0
+            $table->boolean('gender')->nullable();
             $table->longText('description')->nullable();
             $table->longText('location_description')->nullable();
             $table->float('latitude', 10, 6)->nullable();
