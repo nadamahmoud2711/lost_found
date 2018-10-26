@@ -21,8 +21,8 @@ class CreateDistancesTable extends Migration
             $table->unsignedInteger('photo1_id');
             $table->unsignedInteger('photo2_id');
 
-            $table->foreign('photo1_id')->references('id')->on('photos')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('photo2_id')->references('id')->on('photos')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('photo1_id')->references('id')->on('photos_posts')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('photo2_id')->references('id')->on('photos_posts')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
 

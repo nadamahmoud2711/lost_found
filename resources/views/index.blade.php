@@ -54,7 +54,8 @@
 				</div>
 				<div class="modal-body">
 					<div class="donation-form-outer">
-						<form id="found">
+						<form id="found" method="POST" action="{{ route('posts.store') }}">
+                        	{{ csrf_field() }}
 							<div class="form-portlet">
 								<div class="row clearfix">
 
@@ -163,7 +164,8 @@
 				</div>
 				<div class="modal-body">
 					<div class="donation-form-outer">
-						<form id="lost">
+						<form id="lost" method="POST" action="{{ route('posts.store') }}">
+                        	{{ csrf_field() }}
 							<div class="form-portlet">
 								<div class="row clearfix">
 

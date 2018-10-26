@@ -24,9 +24,19 @@ Route::get('photos/test', 'PhotoController@test');
 
 Route::resource('photos', 'PhotoController');
 
+Route::resource('posts', 'PostController');
+
 Route::get('search', 'SearchController@search');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
