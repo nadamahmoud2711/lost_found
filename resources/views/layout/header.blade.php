@@ -1,6 +1,8 @@
 <section class="top-bar">
     <div class="container">
+        {{-- {{Auth::logout()}} --}}
         <!--<div class="left-text pull-left">-->
+        
     <!--<p><span>Support Us :</span> companyname@mail.com</p>-->
         <!--</div> &lt;!&ndash; /.left-text &ndash;&gt;-->
         <!--<div class="social-icons pull-right">-->
@@ -58,6 +60,12 @@
             <div class="nav-header">
                 <ul>
                     <li class="dropdown">
+                        <a href="{{ Request::root() }}/#found">ابحث في موقعك الآن</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{ Request::root() }}/#found">أبحث عن أهلي</a>
+                    </li>
+                    <li class="dropdown">
                         <a href="{{ Request::root() }}/#found">المعثور عليهم</a>
                     </li>
                     <li class="dropdown">
@@ -86,8 +94,15 @@
             <!--<input type="text" placeholder="Search...">-->
             <!--<button type="submit"><i class="fa fa-search"></i></button>-->
             <!--</form>-->
-            <button type="button" class="btn btn-lg mt_15 btn-info" data-toggle="modal" data-target="#modal-register">إنشاء حساب</button>
-            <button type="button" class="btn btn-lg mt_15 btn-outline-info" data-toggle="modal" data-target="#modal-login">تسجيل الدخول</button>
+            @if (!Auth::check())
+                <button type="button" class="btn btn-lg mt_15 btn-info" data-toggle="modal" data-target="#modal-register">إنشاء حساب</button>
+                <button type="button" class="btn btn-lg mt_15 btn-outline-info" data-toggle="modal" data-target="#modal-login">تسجيل الدخول</button>
+            @else
+                <form method="POST" action="{{ route('logout') }}">
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-lg mt_15 btn-info">تسجيل الخروج</button>
+                </form>
+            @endif
         </div>
     </div>
 </nav> <!-- /.mainmenu-area -->
@@ -101,7 +116,8 @@
             </div>
             <div class="modal-body">
                 <div class="donation-form-outer">
-                    <form>
+                    <form method="POST" action="{{ route('register') }}">
+                        {{ csrf_field() }}
                         <div class="form-portlet">
                             <div class="row clearfix">
                                 {{--<div class="form-group col-xs-12 clearfix">--}}
@@ -135,19 +151,47 @@
                                 {{--</div>--}}
                                 <div class="form-group col-xs-12">
                                     <div class="field-label"><span class="required">*</span>الإسم الكامل </div>
-                                    <input type="text" placeholder="الإسم" value="" name="name">
+                                    <input id="name" type="text" placeholder="الإسم" name="name" value="{{ old('name') }}" required autofocus>
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
+
                                 <div class="form-group col-xs-12">
                                     <div class="field-label"><span class="required">*</span>البريد الإلكتروني </div>
-                                    <input type="text" placeholder="الإيميل" value="" name="email">
+                                    <input id="email" type="email" placeholder="الإيميل" name="email" value="{{ old('email') }}" required>
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
+
                                 <div class="form-group col-xs-12">
                                     <div class="field-label"><span class="required">*</span>كلمة المرور </div>
-                                    <input type="text" placeholder="كلمة المرور" value="" name="password">
+                                    <input type="password" placeholder="كلمة المرور" name="password" required>
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
+
+                                <div class="form-group  col-xs-12">
+                                    <div class="field-label"><span class="required">*</span>تأكيد كلمة المرور </div>
+                                    <input id="password-confirm" type="password" placeholder="كلمة المرور" name="password_confirmation" required>
+                                </div>
+
                                 <div class="form-group col-xs-12">
                                     <div class="field-label">رقم الهاتف </div>
-                                    <input type="text" placeholder="رقم الموبايل أو الهاتف" value="" name="phone">
+                                    <input type="tel" placeholder="رقم الموبايل أو الهاتف" value="" name="phone">
+                                    @if ($errors->has('phone'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('phone') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                         <div class="text-center"><button class="thm-btn mt_30 mb_30" type="submit">إنشاء الحساب</button></div>
 
@@ -218,18 +262,29 @@
             </div>
             <div class="modal-body">
                 <div class="donation-form-outer">
-                    <form>
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
                         <div class="form-portlet">
                             <div class="row clearfix">
 
 
                                 <div class="form-group col-xs-12">
                                     <div class="field-label"><span class="required">*</span>البريد الإلكتروني </div>
-                                    <input type="text" placeholder="الإيميل" value="" name="email">
+                                    <input id="email" type="email" placeholder="الإيميل" value="{{ old('email') }}" name="email" required autofocus>
+                                    @if ($errors->has('email'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-group col-xs-12">
                                     <div class="field-label"><span class="required">*</span>كلمة المرور </div>
-                                    <input type="text" placeholder="كلمة المرور" value="" name="password">
+                                    <input id="password" type="password" placeholder="كلمة المرور" name="password" required>
+                                    @if ($errors->has('password'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
 
                                 <div class="text-center"><button class="thm-btn mt_30 mb_30" type="submit">تسجيل الدخول</button></div>

@@ -28,7 +28,7 @@ class CreatePhotosTable extends Migration
             $table->dateTime('lost_or_found')->nullable();
             $table->longText('embedding')->nullable(); // 128 vector, elements are separated by , or ;
             $table->integer('user_id')->nullable()->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('photos/test', 'PhotoController@test');
 
@@ -27,3 +27,7 @@ Route::resource('photos', 'PhotoController');
 Route::get('search', 'SearchController@search');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
