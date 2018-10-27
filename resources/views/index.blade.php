@@ -164,7 +164,7 @@
 				</div>
 				<div class="modal-body">
 					<div class="donation-form-outer">
-						<form id="lost" method="POST" action="{{ route('posts.store') }}">
+						<form id="lost_form" method="POST" action="{{ route('posts.store') }}">
                         	{{ csrf_field() }}
 							<div class="form-portlet">
 								<div class="row clearfix">
@@ -227,7 +227,7 @@
 									</div>
 
 
-									<input type="hidden" id="lost" name="lost" value="1">
+									<input type="hidden" id="lost_check" name="lost" value="1">
 
 
 								</div>
@@ -666,6 +666,68 @@
         }
 	</script>
 
+	<script>
+		$('#registration_form').submit(function (evt) {
+			evt.preventDefault();
+
+			$('.reg_mail').text('');
+			$('.reg_name').text('');
+			$('.reg_pass').text('');
+			$('.reg_phone').text('');
+			$.ajax({
+
+				url:'{{Request::root()}}/register',
+				type: 'POST',
+				data: new FormData(this),
+				processData: false,
+				contentType: false,
+				success: function (response) {
+
+				    if(response == 'logged'){
+
+				        location.reload();
+					}else{
 
 
+				        if(typeof response.email !== 'undefined'){
+
+				            $('.reg_mail').text(response.email[0]);
+						}
+						if(typeof response.name !== 'undefined'){
+
+				            $('.reg_name').text(response.name[0]);
+						}
+						if(typeof response.password !== 'undefined'){
+
+				            $('.reg_pass').text(response.password[0]);
+						}
+						if( typeof response.phone !== 'undefined'){
+
+				            $('.reg_phone').text(response.phone[0]);
+						}
+					}
+
+
+                }
+			})
+        });
+
+		$("#login_form").submit(function (evt) {
+
+		    evt.preventDefault();
+
+		    $.ajax({
+
+				url: "{{Request::root()}}/login",
+				type: "POST",
+				data : new FormData(this),
+				processData: false,
+				contentType: false,
+				success: function (response) {
+
+				    console.log(response);
+                }
+			});
+        })
+	</script>
 @endsection

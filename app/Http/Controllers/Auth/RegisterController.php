@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -21,6 +23,7 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
 
     /**
      * Where to redirect users after registration.
@@ -47,7 +50,9 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+
+
+         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
@@ -55,6 +60,20 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function register(Request $request)
+    {
+        $validation = $this->validator($request->all());
+       if ($validation->fails()) {
+            return response()->json($validation->errors()->toArray());
+     }
+     else{
+            $user = $this->create($request->all());
+            Auth::login($user);
+            if (Auth::user()){
+                return 'logged';
+            }
+        }
+    }
     /**
      * Create a new user instance after a valid registration.
      *

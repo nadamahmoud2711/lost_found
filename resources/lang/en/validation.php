@@ -30,7 +30,7 @@ return [
         'array'   => 'The :attribute must have between :min and :max items.',
     ],
     'boolean'              => 'The :attribute field must be true or false.',
-    'confirmed'            => 'The :attribute confirmation does not match.',
+    'confirmed'            => ' :attribute لاتطابق التأكيد',
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
     'different'            => 'The :attribute and :other must be different.',
@@ -38,7 +38,7 @@ return [
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'dimensions'           => 'The :attribute has invalid image dimensions.',
     'distinct'             => 'The :attribute field has a duplicate value.',
-    'email'                => 'The :attribute must be a valid email address.',
+    'email'                => ' :attribute يجب أن يكون صحيحا',
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
     'filled'               => 'The :attribute field must have a value.',
@@ -59,16 +59,16 @@ return [
     'mimes'                => 'The :attribute must be a file of type: :values.',
     'mimetypes'            => 'The :attribute must be a file of type: :values.',
     'min'                  => [
-        'numeric' => 'The :attribute must be at least :min.',
-        'file'    => 'The :attribute must be at least :min kilobytes.',
-        'string'  => 'The :attribute must be at least :min characters.',
+        'numeric' => ' مدخل :attribute لابد أن يكون على الأقل :min.',
+        'file'    => 'مدخل :attribute لابد أن يكون على الأقل :min كيلوبايتس',
+        'string'  => 'مدخل :attribute لابد أن يكون على الأقل :min رموز',
         'array'   => 'The :attribute must have at least :min items.',
     ],
     'not_in'               => 'The selected :attribute is invalid.',
-    'numeric'              => 'The :attribute must be a number.',
+    'numeric'              => 'مدخل :attribute لابد أن يكون رقما',
     'present'              => 'The :attribute field must be present.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'The :attribute field is required.',
+    'required'             => 'مطلوب :attribute مدخل',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_unless'      => 'The :attribute field is required unless :other is in :values.',
     'required_with'        => 'The :attribute field is required when :values is present.',
@@ -82,9 +82,9 @@ return [
         'string'  => 'The :attribute must be :size characters.',
         'array'   => 'The :attribute must contain :size items.',
     ],
-    'string'               => 'The :attribute must be a string.',
+    'string'               => 'مدخل :attribute لابد أن يتكون من أرقام أو حروف',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'The :attribute has already been taken.',
+    'unique'               => ':attribute بالفعل مسجل',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
 
@@ -116,6 +116,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'password' => 'كلمة المرور',
+        'name' => 'الإسم الكامل',
+        'email' => 'البريد الإلكتروني',
+        'phone' => 'رقم الهاتف'
+    ],
 
 ];
