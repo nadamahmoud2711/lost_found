@@ -725,7 +725,13 @@
 				contentType: false,
 				success: function (response) {
 
-				    console.log(response);
+				    if(response.errors){
+
+				        $('.login_error').text(response.errors);
+					}else{
+
+				        location.reload();
+					}
                 }
 			});
         })

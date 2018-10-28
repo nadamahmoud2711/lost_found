@@ -56,6 +56,7 @@ class SearchController extends Controller
 
 		$allPhotos = Photo::all();
 
+		$euclidean ='';
 		foreach ($allPhotos as $onePhoto)
         {   
             $otherPhotoEmbedding = explode(',', $onePhoto->embedding);

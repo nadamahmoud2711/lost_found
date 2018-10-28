@@ -1,19 +1,6 @@
 <section class="top-bar">
     <div class="container">
-        {{-- {{Auth::logout()}} --}}
-        <!--<div class="left-text pull-left">-->
-        
-    <!--<p><span>Support Us :</span> companyname@mail.com</p>-->
-        <!--</div> &lt;!&ndash; /.left-text &ndash;&gt;-->
-        <!--<div class="social-icons pull-right">-->
-        <!--<ul>-->
-        <!--<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-        <!--<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
-        <!--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
-        <!--<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
-        <!--<li><a href="#"><i class="fa fa-pinterest"></i></a></li>-->
-        <!--</ul>-->
-        <!--</div> &lt;!&ndash; /.social-icons &ndash;&gt;-->
+
     </div>
 </section> <!-- /.top-bar -->
 <header class="header">
@@ -23,35 +10,7 @@
                 <img src="img/resources/logo.png" alt="Awesome Image"/>
             </a>
         </div>
-        {{--<div class="header-right-info pull-right clearfix">--}}
-            {{--<div class="single-header-info">--}}
-                {{--<div class="icon-box">--}}
-                    {{--<div class="inner-box">--}}
-                        {{--<i class="flaticon-interface-2"></i>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="content">--}}
-                    {{--<h3>EMAIL</h3>--}}
-                    {{--<p>companyname@mail.com</p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="single-header-info">--}}
-                {{--<div class="icon-box">--}}
-                    {{--<div class="inner-box">--}}
-                        {{--<i class="flaticon-telephone"></i>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="content">--}}
-                    {{--<h3>Call Now</h3>--}}
-                    {{--<p><b>(732) 803-010-03</b></p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="single-header-info">--}}
-                {{--<!-- Modal: donate now Starts -->--}}
-                {{--<a class="thm-btn" data-toggle="modal" href="#modal-donate-now">Donate Now</a>--}}
-                {{--<!-- Modal: donate now Ends -->--}}
-            {{--</div>--}}
-        {{--</div>--}}
+
     </div>
 </header> <!-- /.header -->
 <nav class="mainmenu-area stricky">
@@ -194,20 +153,16 @@
                                 <div class="form-group col-xs-12">
                                     <div class="field-label"><span class="required">*</span>البريد الإلكتروني </div>
                                     <input id="email" type="email" placeholder="الإيميل" value="{{ old('email') }}" name="email" required autofocus>
-                                    @if ($errors->has('email'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
+
                                 </div>
                                 <div class="form-group col-xs-12">
                                     <div class="field-label"><span class="required">*</span>كلمة المرور </div>
                                     <input id="password" type="password" placeholder="كلمة المرور" name="password" required>
-                                    @if ($errors->has('password'))
+
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('password') }}</strong>
+                                            <strong class="login_error"></strong>
                                         </span>
-                                    @endif
+
                                 </div>
 
                                 <div class="text-center"><button class="thm-btn mt_30 mb_30" type="submit">تسجيل الدخول</button></div>
