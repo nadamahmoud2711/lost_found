@@ -164,15 +164,26 @@
 				</div>
 				<div class="modal-body">
 					<div class="donation-form-outer">
-						<form id="lost_form" method="POST" action="{{ route('posts.store') }}">
+						<form id="lost_form">
                         	{{ csrf_field() }}
 							<div class="form-portlet">
 								<div class="row clearfix">
 
+									<div class="form-group col-xs-12">
+										<div class="field-label"><span class="required">*</span>اسم المفقود </div>
+										<input class="form-control" name="name" id="name" placeholder="أدخل اسم المفقود" type="text">
+									</div>
 
 									<div class="form-group col-xs-12">
 										<div class="field-label"><span class="required">*</span>صور المفقود </div>
-										<input type="file" name="images[]" accept="image/*" multiple>
+										<div class="form-group">
+											<div class="col-md-12 text-center" onload="GetFileInfo ()">
+												<textarea id="file" class="form-control" readonly></textarea>
+												<span class="btn btn-lg btn-danger btn-upload" style="background-color: #364356; border-color: transparent;">إرفع الصور</span>
+											</div>
+											<input type="file" name="attachment[]" id="fileInput" style="display:none;" onchange="GetFileInfo ()" multiple />
+
+										</div>
 									</div>
 
 
@@ -210,16 +221,31 @@
 
 									<div class="form-group col-xs-6">
 										<div class="field-label">تاريخ الفقد</div>
-										<input class="form-control" id="datepicker2" type="text">
+										<input class="form-control" id="datepicker2" name="lost_date" type="text">
 									</div>
-									<div class="col-xs-9"></div>
 
+									<div class="col-md-5"></div>
 									<div class="form-group col-xs-3">
 										<div class="field-label">: العمر</div>
 
 										<input class="form-control" id="age" type="number" name="age">
 
+
+
 									</div>
+									<div class="form-group col-xs-4">
+										<span class="field-label">: الجنس</span>
+
+										<label for="male">ذكر</label>
+										<input type="radio" name="gender" id="male" value="1">
+
+										{{--male--}}
+										<label for="female"> أنثى</label>
+										<input type="radio" name="gender" id="female" value="2">
+										{{--female--}}
+
+									</div>
+
 
 									<div class="form-group col-xs-12">
 										<div class="field-label">: ملحوظات أخرى</div>
@@ -614,7 +640,6 @@
 
 
         $(document).ready(function() {
-            $('input[type="file"]').imageuploadify();
 
             $.fn.datepicker.dates['en'] = {
                 days: ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
@@ -624,20 +649,22 @@
                 monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                 today: "Today",
                 clear: "Clear",
-                format: "mm/dd/yyyy",
                 titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
                 weekStart: 0
             };
 
             $('#datepicker1').datepicker({
 
+                language: 'ar',
+                dateFormat: 'yy-mm-dd'
 
-                language: 'ar'
             });
             $('#datepicker2').datepicker({
 
 
-                language: 'ar'
+                language: 'ar',
+                dateFormat: 'yy-mm-dd'
+
             });
         });
 
@@ -664,6 +691,53 @@
            document.getElementById("setlocation").innerText = "تم الضبط على موقعك الحالي";
             document.getElementById("setlocation").style.backgroundColor = '#ef3356';
         }
+
+        function GetFileInfo () {
+            var wrapper = $('<div/>').css({height:0,width:0,'overflow':'hidden'});
+            var fileInput =  document.getElementById("fileInput");
+            var message = "";
+
+            /*fileInput.change(function(){
+              $this = $(this);
+              $('#file').html($('input:file')[0].files.name);
+            });*/
+            if ('files' in fileInput) {
+                if (fileInput.files.length == 0) {
+                    message = "Please browse for one or more files.";
+                } else {
+                    for (var i = 0; i < fileInput.files.length; i++) {
+                        var file = fileInput.files[i];
+                        if ('name' in file) {
+                            message += file.name + "\n";
+                        }
+                        else {
+                            message += file.fileName + "\n";
+                        }
+                    }
+                }
+            }
+            else {
+                if (fileInput.value == "") {
+                    message += "Please browse for one or more files.";
+                    message += "<br />Use the Control or Shift key for multiple selection.";
+                }
+                else {
+                    message += "Your browser doesn't support the files property!";
+                    message += "<br />The path of the selected file: " + fileInput.value;
+                }
+            }
+
+            var info = document.getElementById ("file");
+            info.innerHTML = message;
+        }
+        /*$('#file').click(function(){
+            fileInput.click();
+        }).show();*/
+
+        $('.btn-upload').click(function(){
+            fileInput.click();
+        }).show();
+
 	</script>
 
 	<script>
@@ -730,10 +804,27 @@
 				        $('.login_error').text(response.errors);
 					}else{
 
+				        //reload page after login
 				        location.reload();
 					}
                 }
 			});
-        })
+        });
+
+		$('#lost_form').submit(function (evt) {
+			evt.preventDefault();
+			$.ajax({
+
+				url: '{{route('posts.store')}}',
+				type: "POST",
+				data : new FormData(this),
+				processData: false,
+				contentType: false,
+				success : function (response) {
+
+				    console.log(response);
+                }
+			});
+        });
 	</script>
 @endsection

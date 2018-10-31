@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Photo;
+use App\Post;
+use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
     /**
@@ -34,9 +36,55 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        // $input = $request->all();
-        
+        $post = new Post;
+
+        $post->lost = $request->lost;
+        $post->gender = $request->gender;
+        $post->description = $request->notes;
+        $post->city = $request->city;
+        $post->area = $request->area;
+        $post->location_description = $request->place_sign;
+        $post->age_to = $request->age;
+        $post->name = $request->name;
+
+        $date = $request->lost_date;
+        $month = substr($date,0,2);
+        $day = substr($date,3,2);
+        $year = substr($date,6,4);
+        $post->lost_or_found = $year.'-'.$month.'-'.$day;
+
+        $post->user_id =auth()->user()->id;
+
+        if($post->save()){
+
+            if(isset($request->attachment) && !empty($request->attachment)){
+                $files = $request->attachment ;
+                foreach ($files as $file){
+                    $name = $file->getClientOriginalName();
+                    $file_name = pathinfo($name, PATHINFO_FILENAME);
+                    $extension = $file->getClientOriginalExtension();
+                    $name = $file_name .'_'. time() . '.'.$extension;
+                    $file->storeAs('public/files', $name);
+
+                    $photo = new Photo;
+                    $photo->post_id = $post->id;
+                    $photo->additional = 0;
+
+                    $photo->path = $name;
+
+                    $photo->save();
+
+                }
+            }
+
+
+            return 'done';
+        }else{
+
+            return 'error';
+        }
+
+
     }
 
     /**

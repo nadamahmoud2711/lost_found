@@ -1,8 +1,21 @@
-/*!
- * Datepicker for Bootstrap v1.8.0 (https://github.com/uxsolutions/bootstrap-datepicker)
+/* =========================================================
+ * bootstrap-datepicker.js
+ * Repo: https://github.com/uxsolutions/bootstrap-datepicker/
+ * Demo: https://eternicode.github.io/bootstrap-datepicker/
+ * Docs: https://bootstrap-datepicker.readthedocs.org/
+ * =========================================================
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
- */
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================= */
 
 (function(factory){
     if (typeof define === 'function' && define.amd) {
@@ -1151,12 +1164,12 @@
 					factor *= 10;
 					/* falls through */
 				case 1:
-					prevIsDisabled = Math.floor(year / factor) * factor <= startYear;
+					prevIsDisabled = Math.floor(year / factor) * factor < startYear;
 					nextIsDisabled = Math.floor(year / factor) * factor + factor > endYear;
 					break;
 				case 0:
-					prevIsDisabled = year <= startYear && month <= startMonth;
-					nextIsDisabled = year >= endYear && month >= endMonth;
+					prevIsDisabled = year <= startYear && month < startMonth;
+					nextIsDisabled = year >= endYear && month > endMonth;
 					break;
 			}
 

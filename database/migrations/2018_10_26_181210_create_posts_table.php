@@ -19,6 +19,8 @@ class CreatePostsTable extends Migration
             $table->boolean('gender')->nullable();
             $table->longText('description')->nullable();
             $table->longText('location_description')->nullable();
+            $table->string('city')->nullable();
+            $table->string('area')->nullable();
             $table->float('latitude', 10, 6)->nullable();
             $table->float('longitude', 10, 6)->nullable();
             $table->integer('age_from')->nullable();
